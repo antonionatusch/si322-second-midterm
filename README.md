@@ -31,7 +31,7 @@ archivos importantes como el _.gitignore_ o el _README.md_** (es decir, el prese
 Tampoco se aceptarán pull requests ya sea para el develop o main que modifiquen el archivo **main.cpp**,
 puesto que este será el espacio donde cada colaborador podrá realizar distintas pruebas o ejercicios
 de manera individual de forma local.
-Es decir, la rama main **solo alojará archivos de _clase_, _cabeceras_ y el _ejecutable principal_** una vez se haya constatado que no se requiere otro proces de compilación
+Es decir, la rama main **solo alojará archivos de _clase_, _cabeceras_ y el _ejecutable principal_** una vez se haya constatado que no se requiere otro proceso de compilación.
 
 
 ## Lenguaje
