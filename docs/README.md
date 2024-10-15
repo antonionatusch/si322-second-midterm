@@ -51,6 +51,12 @@ int HelloWorld::Sum(int a, int b) {
         return a + b;
 }
 ```
+Además, se hará uso del idioma inglés para todas las nomenclaturas de variables, funciones, clases, etc.\
+Solo se hará uso del español para las salidas a consola, o sea, en los <code>cout</code>.
+* PascalCase para las clases y métodos
+* snake_case para las variables.
+* Para incorporar la solución, se hará uso de un menú interactivo una vez se haya constatado que todos los módulos
+necesarios funcionan como deberían.
 ## Herramientas
 Se utilizará <a href="https://www.jetbrains.com/clion/download/#section=windows">CLion</a> como IDE principal para el desarrollo del proyecto, con opción de utilizar Visual Studio, incorporando el estándar **C++ 20** debido a que cuenta con la clase semáforo dentro.
 
