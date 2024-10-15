@@ -34,3 +34,4 @@
 # Misc
 .idea
 cmake-build-debug
+.vs
