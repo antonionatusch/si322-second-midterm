@@ -38,6 +38,17 @@ Es decir, la rama main **solo alojará archivos de _clase_, _cabeceras_ y el _ej
 El único lenguaje a utilizarse en este repositorio será **C++**, puesto que es el lenguaje
 en el que se optó por desarrollar el presente proyecto
 
+## Herramientas
+Se utilizará <a href="https://www.jetbrains.com/clion/download/#section=windows">CLion</a> como IDE principal para el desarrollo del proyecto, incorporando el estándar **C++ 20** debido a que cuenta con la clase semáforo dentro.
+
+## Estructura del proyecto
+<div style="text-align: right"><code>src</code>   - Aquí se encontrarán todas las implementaciones de los archivos de cabecera para las clases junto al archivo principal del programa o main.
+
+<code>include</code>   - Aquí se encontrarán todas las definiciones de las clases a usar, los archivos de cabecera.
+
+<code>docs</code>   - Aquí se encontrarán documentos varios que puedan ser de utilidad para el proyecto, como ser explicaciones de código, el presente documento, etc.
+</div>
+
 ## Contacto
 Cualquier duda, sugerencia, o recomendación deberá hacerse contactando de manera presencial o por correo
 a los co-dueños:
