@@ -5,4 +5,10 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(si322_second_midterm src/main.cpp
         include/HelloWorld.h
-        src/HelloWorld.cpp)
+        src/HelloWorld.cpp
+        include/Worker.h
+        src/Worker.cpp
+        include/BicycleSemaphore.h
+        include/Mounter.h
+        src/Mounter.cpp
+        src/BicycleSemaphore.cpp)
