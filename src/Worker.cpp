@@ -7,12 +7,8 @@
 
 extern std::mutex print_mutex; // Bloqueo de exclusión mutua para proteger los prints
 
-Worker::Worker() {
-
-}
-Worker::~Worker() {
-
-}
+Worker::Worker() = default;
+Worker::~Worker() = default;
 
 /**
  * Función encargada de elaborar una rueda.
@@ -23,7 +19,7 @@ Worker::~Worker() {
 
 
 void Worker::MakeWheel() {
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::milliseconds (1000));
     {
         std::lock_guard<std::mutex> lock(print_mutex);
         std::cout<<"OP 1: Rueda montada.\n";
@@ -37,7 +33,7 @@ void Worker::MakeWheel() {
  *
  */
 void Worker::MakeFrame() {
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::milliseconds (2000));
     {
         std::lock_guard<std::mutex> lock(print_mutex);
         std::cout<<"OP 2: Cuadro montado.\n";
@@ -51,7 +47,7 @@ void Worker::MakeFrame() {
  *
  */
 void Worker::MakeHandlebar() {
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::milliseconds (1500));
     {
         std::lock_guard<std::mutex> lock(print_mutex);
         std::cout<<"OP 3: Manillar montado.\n";
