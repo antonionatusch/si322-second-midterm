@@ -4,8 +4,8 @@
 
 class Menu {
 public:
-    static void Problema10IncisoA();
-    static void Problema10IncisoB();
+    static void Problem10ExerciseA();
+    static void Problem10ExerciseB();
 };
 
 #endif //SI322_SECOND_MIDTERM_MENU_H

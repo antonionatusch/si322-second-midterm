@@ -6,7 +6,7 @@
 // Inicialización de los semáforos globales
 
 std::mutex print_mutex;
-void Menu::Problema10IncisoA() {
+void Menu::Problem10ExerciseA() {
 
     Worker wk1, wk2, wk3;
     Mounter mounter;
@@ -25,7 +25,7 @@ void Menu::Problema10IncisoA() {
     t4.join();
     t5.join();
 }
-void Menu::Problema10IncisoB() {
+void Menu::Problem10ExerciseB() {
 
     Worker wk1, wk2, wk3;
     Mounter mounter;
