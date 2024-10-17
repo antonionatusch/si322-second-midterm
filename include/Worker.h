@@ -1,4 +1,4 @@
-#include "semaphore.h"
+#include "semaphore"
 class Worker {
 public:
     Worker();

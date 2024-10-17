@@ -12,7 +12,18 @@ extern std::mutex print_mutex;
  * "recogió" ese componente de la bicicleta.
  *  Hará esto para cada hilo correspondiente a cada parte de la bicicleta.
  */
+
+void Mounter::CollectWheels() {
+        wheel_semaphore.acquire();
+        wheel_semaphore.acquire();
+        {
+            std::lock_guard<std::mutex> lock(print_mutex);
+            std::cout << "Montador: Ambas ruedas recolectadas.\n";
+        }
+}
+
 void Mounter::MakeBicycle() {
+
     wheel_semaphore.acquire();
     {
         std::lock_guard<std::mutex> lock(print_mutex);
@@ -23,6 +34,26 @@ void Mounter::MakeBicycle() {
         std::lock_guard<std::mutex> lock(print_mutex);
         std::cout<<"Montador: Segunda rueda recolectada.\n";
     }
+    frame_semaphore.acquire();
+    {
+        std::lock_guard<std::mutex> lock(print_mutex);
+        std::cout<<"Montador: Cuadro recolectado.\n";
+    }
+    handlebar_semaphore.acquire();
+    {
+        std::lock_guard<std::mutex> lock(print_mutex);
+        std::cout<<"Montador: Manillar recolectado.\n";
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(print_mutex);
+        std::cout<<"Montador: Todas las piezas listas, bicicleta ensamblada.\n";
+    }
+}
+
+void Mounter::MakeBicycleTwoWheels() {
+    CollectWheels();
+
     frame_semaphore.acquire();
     {
         std::lock_guard<std::mutex> lock(print_mutex);
