@@ -2,5 +2,5 @@
 #include "../include/Menu.h"
 
 int main() {
-    Menu::Problema10IncisoA();
+    Menu::Problema10IncisoB();
 }
