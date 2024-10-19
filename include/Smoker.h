@@ -1,3 +1,4 @@
+#include <iostream>
 #include <semaphore>
 class Smoker {
 public:

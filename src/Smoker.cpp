@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../include/Smoker.h"
 #include "../include/SmokeSemaphore.h"
 

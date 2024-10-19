@@ -1,15 +1,11 @@
 #include <iostream>
 #include <thread>
 #include <semaphore>
-#include "../include/HelloWorld.h"
 #include "../include/Agent.h"
 #include "../include/Smoker.h"
 #include "../include/SmokeSemaphore.h"
 
 int main() {
-    auto hw = new HelloWorld();
-    std::cout<<"The sum of 2 and 3 is: "<<hw->Sum(2,3)<<"\n";
-
     Agent ag;
     Smoker smk1, smk2, smk3;
 
