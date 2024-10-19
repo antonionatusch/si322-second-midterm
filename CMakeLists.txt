@@ -9,4 +9,12 @@ add_executable(si322_second_midterm src/main.cpp
         src/Agent.cpp
         include/Agent.h
         src/Smoker.cpp
-        include/Smoker.h)
+        include/Smoker.h
+        include/Worker.h
+        src/Worker.cpp
+        include/BicycleSemaphore.h
+        include/Mounter.h
+        src/Mounter.cpp
+        src/BicycleSemaphore.cpp
+        include/Menu.h
+        src/Menu.cpp)
