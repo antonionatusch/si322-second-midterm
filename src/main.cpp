@@ -12,14 +12,13 @@ int main() {
         std::cout << "3. Problema 11\n";
         std::cout << "e. Salir\n";
 
-        std::getline(std::cin, answer);  // Lee toda la línea de entrada
+        std::getline(std::cin, answer);
 
-        if (answer.empty() || answer == " ") {  // Verifica si la entrada es un espacio en blanco
+        if (answer.empty() || answer == " ") {
             std::cerr << "Se introdujo un espacio en blanco o carácter vacío, introduzca una opción.\n";
             continue;
         }
 
-        // Usar el primer carácter para comparar las opciones
         switch (tolower(answer[0])) {
             case '1':
                 Menu::Problem10ExerciseA();
