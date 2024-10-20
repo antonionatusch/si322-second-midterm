@@ -60,6 +60,17 @@ void Menu::Problem10ExerciseB() {
     t5.join();
 }
 
+/**
+ * Función del Menú correspondiente al problema 11.
+ * El agente coloca dos ingredientes sobre la mesa, permitiendo que el
+ * fumador con el ingrediente restante arme y fume un cigarrillo.
+ * Se utiliza el método PutTwoIngredients como método de entrada en el cual el 'Agente' coloca los primeros 2 ingredientes del cigarro.
+ * Al finalizar el proceso, es necesario desvincular (detach) los hilos de los 3 diferentes procesos de los fumadores
+ * si no se desea continuar, para evitar que sigan ejecutándose innecesariamente.
+ * Si se desea continuar, se espera (join) a que cada hilo de fumador termine su ejecución.
+ */
+
+
 void Menu::Problem11() {
     Agent ag;
     Smoker smk1, smk2, smk3;
@@ -70,7 +81,7 @@ void Menu::Problem11() {
     std::thread matches_thread(&Smoker::PutMatches, &smk3);
 
     agent_thread.join();
-    if(!continueSmoking) {
+    if(!continue_smoking) {
         tobacco_thread.detach();
         paper_thread.detach();
         matches_thread.detach();
