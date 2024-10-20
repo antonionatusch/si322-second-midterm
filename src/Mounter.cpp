@@ -5,13 +5,12 @@
 
 extern std::mutex print_mutex;
 /**
- * @descripción Función que ensambla toda la bicicleta.
  *
- * Lo que hace es adquirir el hilo principal de cada uno de los elementos
- * de la bicicleta, el cual por propósitos del ejercicio significa que
- * "recogió" ese componente de la bicicleta.
- *  Hará esto para cada hilo correspondiente a cada parte de la bicicleta.
+ * @descripción Función que recolecta las ruedas.
+ * Libera los 2 hilos correspondientes a las ruedas y luego permite el flujo normal del programa.
+ *
  */
+
 
 void Mounter::CollectWheels() {
         wheel_semaphore.acquire();
@@ -22,6 +21,14 @@ void Mounter::CollectWheels() {
         }
 }
 
+/**
+ * @descripción Función que ensambla toda la bicicleta.
+ *
+ * Lo que hace es adquirir el hilo principal de cada uno de los elementos
+ * de la bicicleta, el cual por propósitos del ejercicio significa que
+ * "recogió" ese componente de la bicicleta.
+ *  Hará esto para cada hilo correspondiente a cada parte de la bicicleta.
+ */
 void Mounter::MakeBicycle() {
 
     wheel_semaphore.acquire();
@@ -50,6 +57,14 @@ void Mounter::MakeBicycle() {
         std::cout<<"Montador: Todas las piezas listas, bicicleta ensamblada.\n";
     }
 }
+
+/**
+ *
+ * @descripción Función que ensambla la bicicleta. En este caso,
+ * se espera a que las 2 ruedas estén listas (haciendo uso de la función CollectWheels) para recién
+ * recogerlas y continuar con el flujo normal del armado de la bicicleta.
+ */
+
 
 void Mounter::MakeBicycleTwoWheels() {
     CollectWheels();
