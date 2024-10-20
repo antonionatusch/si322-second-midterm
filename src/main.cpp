@@ -20,7 +20,7 @@ int main() {
         }
 
         // Usar el primer carácter para comparar las opciones
-        switch (answer[0]) {
+        switch (tolower(answer[0])) {
             case '1':
                 Menu::Problem10ExerciseA();
                 break;
@@ -35,6 +35,7 @@ int main() {
                 break;
             default:
                 std::cerr << "Introdujo una opción no válida, intente de nuevo.\n";
+                break;
         }
     }
 }
