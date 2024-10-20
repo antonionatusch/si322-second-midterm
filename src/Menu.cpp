@@ -6,6 +6,8 @@
 #include "../include/Smoker.h"
 #include "../include/SmokeSemaphore.h"
 #include <thread>
+
+#include "../include/Global.h"
 // Inicialización de los semáforos globales
 
 std::mutex print_mutex;
@@ -68,8 +70,14 @@ void Menu::Problem11() {
     std::thread matches_thread(&Smoker::PutMatches, &smk3);
 
     agent_thread.join();
-    tobacco_thread.join();
-    paper_thread.join();
-    matches_thread.join();
-
+    if(!continueSmoking) {
+        tobacco_thread.detach();
+        paper_thread.detach();
+        matches_thread.detach();
+    }
+    else {
+        tobacco_thread.join();
+        paper_thread.join();
+        matches_thread.join();
+    }
 }
