@@ -19,6 +19,11 @@ int main() {
             continue;
         }
 
+        if (answer.length() > 1) {
+            std::cerr<<"Se introdujo más de un carácter, intente de nuevo.\n";
+            continue;
+        }
+
         switch (tolower(answer[0])) {
             case '1':
                 Menu::Problem10ExerciseA();
