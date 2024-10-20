@@ -4,4 +4,4 @@
 
 #include "../include/Global.h"
 
-std::atomic<bool> continueSmoking(true);
+std::atomic<bool> continue_smoking(true);
