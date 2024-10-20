@@ -3,4 +3,5 @@
 class Agent {
 public:
     void PutTwoIngredients();
+    static bool AskToContinue();
 };

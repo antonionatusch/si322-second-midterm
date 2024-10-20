@@ -17,4 +17,6 @@ add_executable(si322_second_midterm src/main.cpp
         src/Mounter.cpp
         src/BicycleSemaphore.cpp
         include/Menu.h
-        src/Menu.cpp)
+        src/Menu.cpp
+        include/Global.h
+        src/Global.cpp)

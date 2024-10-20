@@ -1,5 +1,7 @@
 #include "../include/Agent.h"
 #include "../include/SmokeSemaphore.h"
+#include "../include/Smoker.h"
+#include "../include/Global.h"
 
 /**
  * Función que el Agente pone dos ingredientes para empezar
@@ -9,7 +11,11 @@
  */
 
 void Agent::PutTwoIngredients () {
+
+    const int max_iterations = 5;
+    int iteration_count = 0;
     while (true) {
+        continueSmoking= true;
         agent_ready.acquire();  // Espera a que el fumador termine de fumar
 
         int choice = rand() % 3;
@@ -24,5 +30,21 @@ void Agent::PutTwoIngredients () {
             std::cout << "\nAgente coloca tabaco y papel en la mesa." << std::endl;
             smoker_with_matches.release();
         }
+
+        iteration_count++;
+
+        if(iteration_count % max_iterations == 0 && !AskToContinue()) {
+            std::cout << "\n saliendo del ciclo y volviendo al menu..." << std::endl;
+            continueSmoking = false;
+            break;
+        }
     }
+}
+
+bool Agent::AskToContinue() {
+    std::string choice;
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::cout << "\nDesea continuar? (y/n): ";
+    std::getline(std::cin, choice);
+    return !choice.empty() && (std::tolower(choice[0]) == 'y');
 }
