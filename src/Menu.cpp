@@ -2,6 +2,9 @@
 #include "../include/Worker.h"
 #include "../include/Mounter.h"
 #include "../include/BicycleSemaphore.h"
+#include "../include/Agent.h"
+#include "../include/Smoker.h"
+#include "../include/SmokeSemaphore.h"
 #include <thread>
 // Inicialización de los semáforos globales
 
@@ -53,4 +56,20 @@ void Menu::Problem10ExerciseB() {
     t3.join();
     t4.join();
     t5.join();
+}
+
+void Menu::Problem11() {
+    Agent ag;
+    Smoker smk1, smk2, smk3;
+
+    std::thread agent_thread(&Agent::PutTwoIngredients, &ag);
+    std::thread tobacco_thread(&Smoker::PutTobacco, &smk1);
+    std::thread paper_thread(&Smoker::PutPaper, &smk2);
+    std::thread matches_thread(&Smoker::PutMatches, &smk3);
+
+    agent_thread.join();
+    tobacco_thread.join();
+    paper_thread.join();
+    matches_thread.join();
+
 }

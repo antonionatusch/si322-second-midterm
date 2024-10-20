@@ -9,6 +9,7 @@ int main() {
         std::cout << "Elija una opción:\n";
         std::cout << "1. Problema 10 inciso A\n";
         std::cout << "2. Problema 10 inciso B\n";
+        std::cout << "3. Problema 11\n";
         std::cout << "e. Salir\n";
 
         std::getline(std::cin, answer);  // Lee toda la línea de entrada
@@ -25,6 +26,9 @@ int main() {
                 break;
             case '2':
                 Menu::Problem10ExerciseB();
+                break;
+            case '3':
+                Menu::Problem11();
                 break;
             case 'e':
                 std::cout<<"Hasta luego.\n";
