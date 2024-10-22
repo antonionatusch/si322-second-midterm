@@ -28,10 +28,7 @@ modificación posterior, junto con los directorios de clases provenientes de los
 La rama de cada desarrollador es dibujo libre, sin embargo, **no se aceptarán _pull requests_ que modifiquen
 archivos importantes como el _.gitignore_ o el _README.md_** (es decir, el presente documento).
 
-Tampoco se aceptarán pull requests ya sea para el develop o main que modifiquen el archivo **main.cpp**,
-puesto que este será el espacio donde cada colaborador podrá realizar distintas pruebas o ejercicios
-de manera individual de forma local.
-Es decir, la rama main **solo alojará archivos de _clase_, _cabeceras_ y el _ejecutable principal_** una vez se haya constatado que no se requiere otro proceso de compilación.
+La rama main o dev aceptarán pull requests hacia ellos **siempre y cuando** sean avances concretos que sigan las convenciones del proyecto en pos de mantener una estructura uniforme.
 
 
 ## Lenguaje
